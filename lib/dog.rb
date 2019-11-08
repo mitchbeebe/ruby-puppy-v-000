@@ -1,10 +1,13 @@
 # Add your code here
 class Dog
   
+  attr_accessor :name
+  
   @@all = []
   
   def initialize(name)
     @name = name
+    self.save
   end
   
   def self.all
@@ -17,4 +20,9 @@ class Dog
   
   def self.print_all
     @@all.each { |x| puts x }
+  end
+  
+  def save
+    @@all << name
+  end
   
